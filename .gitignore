@@ -84,7 +84,7 @@ jspm_packages/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist - commented out for GitHub Pages deployment
 
 # Gatsby files
 .cache/
