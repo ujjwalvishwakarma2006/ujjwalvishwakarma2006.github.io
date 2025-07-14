@@ -1,0 +1,320 @@
+/* Loading Screen Styles */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Animated background */
+.loading-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--gradient-primary);
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--gradient-secondary);
+  top: 50%;
+  right: 20%;
+  animation-delay: 3s;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-success);
+  bottom: 30%;
+  left: 60%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-10px, 15px) scale(0.95);
+  }
+  75% {
+    transform: translate(-25px, -20px) scale(1.02);
+  }
+}
+
+/* Main content */
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Geometric logo animation */
+.loading-logo {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.geometric-loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.ring-outer {
+  width: 100px;
+  height: 100px;
+  border-top: 2px solid var(--accent);
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid var(--accent);
+  opacity: 0.8;
+}
+
+.ring-middle {
+  width: 70px;
+  height: 70px;
+  border-top: 2px solid var(--text-secondary);
+  border-right: 2px solid var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  opacity: 0.6;
+}
+
+.ring-inner {
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+.center-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/* Simple loading dots */
+.loading-text {
+  margin-bottom: 2rem;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Progress bar */
+.loading-progress {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 1px;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Floating particles */
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 50%;
+  left: 50%;
+  bottom: 50%;
+  opacity: 0.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .geometric-loader {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .ring-outer {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .ring-middle {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .ring-inner {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .loading-progress {
+    width: 150px;
+  }
+  
+  .orb-1 {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .orb-2 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .orb-3 {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Theme-specific adjustments */
+[data-theme="dark"] .loading-screen {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+[data-theme="dark"] .gradient-orb {
+  opacity: 0.12;
+}
+
+[data-theme="dark"] .center-dot {
+  box-shadow: 0 0 20px var(--accent);
+}
+
+[data-theme="light"] .gradient-orb {
+  opacity: 0.08;
+  filter: blur(100px);
+}
+
+[data-theme="light"] .center-dot {
+  box-shadow: 0 0 10px var(--accent);
+}
+
+[data-theme="light"] .loading-screen {
+  background: var(--bg-primary);
+}
