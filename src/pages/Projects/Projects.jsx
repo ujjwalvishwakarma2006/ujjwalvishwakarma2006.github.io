@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Search, Filter, FileText, Database, Brain, Music, Globe } from 'lucide-react';
+import { Github, ExternalLink, Search, Filter } from 'lucide-react';
+import { getIcon } from '../../utils/iconMap';
+import portfolioData from '../../data/portfolioData.json';
 import './Projects.css';
 
 const Projects = () => {
@@ -8,75 +10,9 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Document Identity Aggregator',
-      description: 'Creating a system to aggregate and verify CV data using web crawling, OCR and NLP to detect inconsistencies.',
-      icon: FileText,
-      technologies: ['Selenium', 'Tesseract OCR', 'NLP', 'APIs', 'Web Crawling'],
-      category: 'AI/ML',
-      githubUrl: 'https://github.com/Prit44421/document_aggregation',
-      liveUrl: null,
-      status: 'In Development',
-      date: 'May 2025',
-      details: 'Developing a system to aggregate and cross-verify candidate CV data from multiple online sources to detect inconsistencies and validate authenticity.'
-    },
-    {
-      id: 2,
-      title: 'Library Management System - Advanced',
-      description: 'A comprehensive C++/SQLite-based system for efficient library resource and user management.',
-      icon: Database,
-      technologies: ['C++', 'SQLite', 'CMake', 'Modern C++17', 'Shell Scripting', 'SQL', 'Git'],
-      category: 'Systems Programming',
-      githubUrl: 'https://github.com/ujjwalvishwakarma2006/lms',
-      liveUrl: null,
-      status: 'Active',
-      date: 'Present',
-      details: 'Designed and implemented a modular library management system supporting user and book CRUD operations, persistent storage, and robust data validation. Integrated direct database access with in-memory operations for performance and consistency, and automated build/test workflows using CMake and scripts.'
-    },
-    {
-      id: 3,
-      title: 'Deep Learning with Python Projects',
-      description: 'Practiced Deep Learning from the book along with some research-inspired experiments.',
-      icon: Brain,
-      technologies: ['Colab', 'TensorFlow', 'Keras', 'Python', 'Deep Learning'],
-      category: 'AI/ML',
-      githubUrl: 'https://github.com/ujjwalvishwakarma2006/deep-learning-with-python',
-      liveUrl: null,
-      status: 'Ongoing',
-      date: 'Present',
-      details: 'Following the "Deep Learning with Python" by François Chollet book with additional research-inspired experiments and implementations.'
-    },
-    {
-      id: 4,
-      title: 'Spotify to YT Music Playlist Transfer',
-      description: 'Transferred a playlist of songs from Spotify to YouTube Music with a user-friendly GUI.',
-      icon: Music,
-      technologies: ['Google APIs', 'Spotify APIs', 'PyQt5', 'Python'],
-      category: 'Desktop Application',
-      githubUrl: 'https://github.com/ujjwalvishwakarma2006/spotify-to-ytmusic',
-      liveUrl: null,
-      status: 'Completed',
-      date: 'Dec 2024',
-      details: 'Built a desktop application to seamlessly transfer playlists between Spotify and YouTube Music using their respective APIs.'
-    },
-    {
-      id: 5,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and Framer Motion showcasing my work and skills.',
-      icon: Globe,
-      technologies: ['React', 'Framer Motion', 'CSS3', 'Vite', 'JavaScript'],
-      category: 'Web Development',
-      githubUrl: 'https://github.com/ujjwalvishwakarma2006/ujjwalvishwakarma2006.github.io',
-      liveUrl: 'https://ujjwalvishwakarma2006.github.io',
-      status: 'Live',
-      date: 'Jan 2025',
-      details: 'Personal portfolio website featuring responsive design, smooth animations, dark/light theme toggle, and optimized performance.'
-    }
-  ];
+  const projects = portfolioData.projects;
 
-  const categories = ['All', 'AI/ML', 'Systems Programming', 'Web Development', 'Desktop Application'];
+  const categories = ['All', ...new Set(projects.map(p => p.category))];
 
   const filteredProjects = projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -149,15 +85,21 @@ const Projects = () => {
 
         {hasAnimated ? (
           <div className="projects-grid">
-            {filteredProjects.map(project => (
+            {filteredProjects.map(project => {
+              const IconComponent = getIcon(project.icon);
+              return (
               <div
                 key={project.id}
                 className="project-card"
               >
                 <div className="project-image">
-                  <div className="project-icon">
-                    <project.icon size={48} />
-                  </div>
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="project-thumbnail" />
+                  ) : (
+                    <div className="project-icon">
+                      <IconComponent size={48} />
+                    </div>
+                  )}
                 </div>
 
                 <div className="project-content">
@@ -208,11 +150,14 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
         ) : (
           <motion.div className="projects-grid" variants={containerVariants}>
-            {filteredProjects.map(project => (
+            {filteredProjects.map(project => {
+              const IconComponent = getIcon(project.icon);
+              return (
               <motion.div
                 key={project.id}
                 className="project-card"
@@ -220,9 +165,13 @@ const Projects = () => {
                 whileHover={{ y: -5, transition: { duration: 0.15 } }}
               >
                 <div className="project-image">
-                  <div className="project-icon">
-                    <project.icon size={48} />
-                  </div>
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="project-thumbnail" />
+                  ) : (
+                    <div className="project-icon">
+                      <IconComponent size={48} />
+                    </div>
+                  )}
                 </div>
 
                 <div className="project-content">
@@ -273,7 +222,8 @@ const Projects = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </motion.div>
         )}
 

@@ -1,13 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Github, Linkedin, Code, BookOpen } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Hero from '../../components/Hero/Hero';
 import ProfileLinks from '../../components/ProfileLinks/ProfileLinks';
 import FeaturedProjects from '../../components/FeaturedProjects/FeaturedProjects';
+import { getIcon } from '../../utils/iconMap';
+import portfolioData from '../../data/portfolioData.json';
 import './Home.css';
 
 const Home = () => {
+  const { stats } = portfolioData;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,61 +69,25 @@ const Home = () => {
       <motion.section className="stats-section section" variants={itemVariants}>
         <div className="container">
           <div className="stats-grid">
-            <motion.div
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="stat-icon">
-                <Code size={32} />
-              </div>
-              <div className="stat-content">
-                <h3 className="stat-number">5+</h3>
-                <p className="stat-label">Projects Completed</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="stat-icon">
-                <BookOpen size={32} />
-              </div>
-              <div className="stat-content">
-                <h3 className="stat-number">4+</h3>
-                <p className="stat-label">Active Projects</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="stat-icon">
-                <Github size={32} />
-              </div>
-              <div className="stat-content">
-                <h3 className="stat-number">100+</h3>
-                <p className="stat-label">GitHub Contributions</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="stat-icon">
-                <Linkedin size={32} />
-              </div>
-              <div className="stat-content">
-                <h3 className="stat-number">8+</h3>
-                <p className="stat-label">Technologies Mastered</p>
-              </div>
-            </motion.div>
+            {stats.map((stat, index) => {
+              const IconComponent = getIcon(stat.icon);
+              return (
+                <motion.div
+                  key={index}
+                  className="stat-card"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="stat-icon">
+                    <IconComponent size={32} />
+                  </div>
+                  <div className="stat-content">
+                    <h3 className="stat-number">{stat.value}</h3>
+                    <p className="stat-label">{stat.label}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </motion.section>

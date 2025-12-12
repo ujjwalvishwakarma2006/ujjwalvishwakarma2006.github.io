@@ -1,0 +1,338 @@
+{
+  "personalInfo": {
+    "name": "Ujjwal Vishwakarma",
+    "firstName": "Ujjwal",
+    "lastName": "Vishwakarma",
+    "initials": "UV",
+    "role": "Software Developer",
+    "tagline": "Building the future through code and innovation",
+    "email": "ujjwalja23@gmail.com",
+    "contactEmail": "contact@ujjwalvishwakarma.com",
+    "phone": "+91 XXXXX XXXXX",
+    "location": "Rajasthan, India",
+    "about": "I'm always excited to work on new projects and collaborate with amazing people. Let's create something great together!"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "roles": ["CS Student", "Aspiring Developer", "Tech Enthusiast"],
+    "description": "Pre-final year student at IIT Jammu with 2.5+ years of programming experience. Worked with C++, Python, and Rust. I solve DSA problems, build personal and curriculum projects, and have a strong interest in Deep Learning. I've studied research papers and completed François Chollet's Deep Learning book.",
+    "primaryCTA": {
+      "text": "View My Work",
+      "link": "/projects"
+    },
+    "secondaryCTA": {
+      "text": "Let's Connect",
+      "link": "/contact"
+    }
+  },
+  "navItems": [
+    { "path": "/", "label": "Home" },
+    { "path": "/projects", "label": "Projects" },
+    { "path": "/experience", "label": "Experience" },
+    { "path": "/education", "label": "Education" },
+    { "path": "/articles", "label": "Articles" },
+    { "path": "/contact", "label": "Contact" }
+  ],
+  "socialProfiles": [
+    {
+      "name": "GitHub",
+      "username": "ujjwalVishwakarma2006",
+      "url": "https://github.com/ujjwalVishwakarma2006",
+      "icon": "Github",
+      "description": "My code repositories and open source contributions",
+      "stats": "20+ repositories",
+      "color": "#333"
+    },
+    {
+      "name": "LinkedIn",
+      "username": "ujjwal-iitjammu",
+      "url": "https://linkedin.com/in/ujjwal-iitjammu",
+      "icon": "Linkedin",
+      "description": "Professional network and career updates",
+      "stats": "300+ connections",
+      "color": "#0077b5"
+    },
+    {
+      "name": "LeetCode",
+      "username": "ujjwalVishwakarma2006",
+      "url": "https://leetcode.com/ujjwalVishwakarma2006",
+      "icon": "Code",
+      "description": "Coding challenges and algorithm solutions",
+      "stats": "600+ problems solved",
+      "color": "#ffa116"
+    },
+    {
+      "name": "Codeforces",
+      "username": "2023ucs0116",
+      "url": "https://codeforces.com/profile/2023ucs0116",
+      "icon": "Trophy",
+      "description": "Competitive programming contests and ratings",
+      "stats": "Beginner",
+      "color": "#1f8dd6"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:ujjwalja23@gmail.com",
+      "icon": "Mail",
+      "description": "Contact me directly",
+      "stats": "",
+      "color": "#EA4335"
+    }
+  ],
+  "stats": [
+    {
+      "label": "Projects Completed",
+      "value": "5+",
+      "icon": "Code"
+    },
+    {
+      "label": "Active Projects",
+      "value": "4+",
+      "icon": "BookOpen"
+    },
+    {
+      "label": "GitHub Repositories",
+      "value": "20+",
+      "icon": "Github"
+    },
+    {
+      "label": "LeetCode Problems",
+      "value": "600+",
+      "icon": "Trophy"
+    }
+  ],
+  "projects": [
+    {
+      "id": 95,
+      "title": "Multi-threaded Ray Tracer",
+      "description": "A multi-threaded ray tracer based on the first book in Ray Tracing in One Weekend series.",
+      "icon": "FileText",
+      "image": "https://raw.githubusercontent.com/yhcheer/RayTracingInOneWeekend/master/image/Cp0.jpg",
+      "technologies": ["C++17", "CMake", "Multi-threading", "Ray Tracing", "Git"],
+      "category": "Systems Programming",
+      "githubUrl": "https://github.com/ujjwalvishwakarma2006/multi-threaded-ray-tracer",
+      "liveUrl": null,
+      "status": "Completed",
+      "date": "Dec 2025",
+      "details": "Developed a CPU based multi-threaded ray tracer in C++17 to output images in .ppm file format. Implemented features like anti-aliasing, diffuse materials, metal materials, dielectric materials, and multi-threading for performance optimization.",
+      "featured": true
+    },
+    {
+      "id": 96,
+      "title": "Semantic Image Retrieval Engine",
+      "description": "A semantic image searching tool for retrieving images based on textual descriptions or semantically similar images.",
+      "icon": "FileText",
+      "image": "https://ondemand.bannerbear.com/signedurl/9K5qxXae32jEAGRDkj/image.jpg?modifications=W3sibmFtZSI6InJlcG8iLCJ0ZXh0IjoidWpqd2FsdmlzaHdha2FybWEyMDA2IC8gKnNlbWFudGljLWltYWdlLXJldHJpZXZhbCoifSx7Im5hbWUiOiJkZXNjIiwidGV4dCI6IiAifSx7Im5hbWUiOiJhdmF0YXI1IiwiaGlkZSI6dHJ1ZX0seyJuYW1lIjoiYXZhdGFyNCIsImhpZGUiOnRydWV9LHsibmFtZSI6ImF2YXRhcjMiLCJoaWRlIjp0cnVlfSx7Im5hbWUiOiJhdmF0YXIyIiwiaGlkZSI6dHJ1ZX0seyJuYW1lIjoiYXZhdGFyMSIsImltYWdlX3VybCI6Imh0dHBzOi8vYXZhdGFycy5naXRodWJ1c2VyY29udGVudC5jb20vdS8xNDQ1NjM5Mjc_dj00In0seyJuYW1lIjoiY29udHJpYnV0b3JzIiwidGV4dCI6InVqandhbHZpc2h3YWthcm1hMjAwNiJ9LHsibmFtZSI6InN0YXJzIiwidGV4dCI6IjAifV0&s=2c276d78c4ab66ae3df6cfd317354754eff99150d292bd31faa42d70c6ccde01",
+      "technologies": ["Python", "PyTorch", "FastAPI", "FAISS", "CLIP", "SAM"],
+      "category": "AI/ML",
+      "githubUrl": "https://github.com/Prit44421/semantic-image-retrieval",
+      "liveUrl": null,
+      "status": "Completed",
+      "date": "Nov 2025",
+      "details": "Built a semantic image retrieval engine using OpenAI's CLIP model for encoding images and text, and Meta's Segment Anything Model (SAM) for image segmentation. Implemented a FastAPI backend with FAISS for efficient similarity search.",
+      "featured": true
+    },
+    {
+      "id": 97,
+      "title": "Document Identity Aggregator",
+      "description": "Creating a system to aggregate and verify CV data using web crawling, OCR and NLP to detect inconsistencies and validate authenticity.",
+      "icon": "FileText",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTZeAkonP-9JkC3y9EyaTfYcT5VbYU3fKbZQ&s",
+      "technologies": ["Selenium", "Tesseract OCR", "NLP", "APIs", "Web Crawling"],
+      "category": "AI/ML",
+      "githubUrl": "https://github.com/Prit44421/document_aggregation",
+      "liveUrl": null,
+      "status": "Completed",
+      "date": "May 2025",
+      "details": "Developing a system to aggregate and cross-verify candidate CV data from multiple online sources to detect inconsistencies and validate authenticity.",
+      "featured": true
+    },
+    {
+      "id": 98,
+      "title": "Deep Learning with Python Projects",
+      "description": "Practicing Deep Learning from François Chollet's book along with research-inspired experiments using TensorFlow and Keras.",
+      "icon": "Brain",
+      "image": "https://www.tensorflow.org/static/site-assets/images/marketing/edu/edu_books.jpg",
+      "technologies": ["Python", "TensorFlow", "Keras", "Google Colab", "Deep Learning"],
+      "category": "AI/ML",
+      "githubUrl": "https://github.com/ujjwalvishwakarma2006/deep-learning-with-python",
+      "liveUrl": null,
+      "status": "Ongoing",
+      "date": "Present",
+      "details": "Following the \"Deep Learning with Python\" by François Chollet book with additional research-inspired experiments and implementations.",
+      "featured": false
+    },
+    {
+      "id": 99,
+      "title": "Spotify to YT Music Playlist Transfer",
+      "description": "Transferred a playlist of songs from Spotify to YouTube Music with a user-friendly GUI.",
+      "icon": "Music",
+      "image": "https://www.jumpstartmag.com/wp-content/uploads/2024/07/image-11.png",
+      "technologies": ["Google APIs", "Spotify APIs", "PyQt5", "Python"],
+      "category": "Desktop Application",
+      "githubUrl": "https://github.com/ujjwalvishwakarma2006/spotify-to-ytmusic",
+      "liveUrl": null,
+      "status": "Completed",
+      "date": "Dec 2024",
+      "details": "Built a desktop application to seamlessly transfer playlists between Spotify and YouTube Music using their respective APIs.",
+      "featured": false
+    },
+    {
+      "id": 100,
+      "title": "Portfolio Website",
+      "description": "A modern, responsive portfolio website built with React and Framer Motion showcasing my work and skills.",
+      "icon": "Globe",
+      "image": "https://digifloat.io/wp-content/uploads/2024/12/Royalty-Free-Illustrations-Twitter.jpg",
+      "technologies": ["React", "Framer Motion", "CSS3", "Vite", "JavaScript"],
+      "category": "Web Development",
+      "githubUrl": "https://github.com/ujjwalvishwakarma2006/ujjwalvishwakarma2006.github.io",
+      "liveUrl": "https://ujjwalvishwakarma2006.github.io",
+      "status": "Live",
+      "date": "Jan 2025",
+      "details": "Personal portfolio website featuring responsive design, smooth animations, dark/light theme toggle, and optimized performance.",
+      "featured": false
+    },
+    {
+      "id": 101,
+      "title": "Delhi Metro Ticket Booking System",
+      "description": "A web application for booking Delhi Metro tickets with user authentication and real-time seat availability.",
+      "icon": "Globe",
+      "image": "https://img.freepik.com/premium-vector/subway-metro-train-vector-illustration-graphic-design_38694-1594.jpg?semt=ais_se_enriched&w=740&q=80",
+      "technologies": ["Node.js", "Express", "PostgreSQL", "React", "JavaScript", "Websockets"],
+      "category": "Database Management",
+      "githubUrl": "https://github.com/ujjwalvishwakarma2006/delhi-metro-ticket-booking-system",
+      "liveUrl": null,
+      "status": "Completed",
+      "date": "Nov 2025",
+      "details": "Developed as a database management systems course's term project, this web app allows users to book Delhi Metro tickets with features like user authentication, live-logging and real-time seat availability.",
+      "featured": false
+    }
+  ],
+  "experience": {
+    "lookingForWork": {
+      "status": "Available for Opportunities",
+      "seeking": [
+        "Deep Learning Engineer Positions",
+        "Machine Learning Developer Roles",
+        "C++ Software Developer Opportunities",
+        "Linux Systems Developer"
+      ],
+      "preferences": [
+        "Remote or Hybrid Work",
+        "Tech Startups or Research Companies",
+        "Learning & Growth Opportunities",
+        "Collaborative Team Environment"
+      ],
+      "skills": [
+        "C++", "Python", "Deep Learning", "Linux", "TensorFlow", 
+        "PyTorch", "JavaScript", "Git", "Docker", "Rust"
+      ]
+    },
+    "history": []
+  },
+  "education": {
+    "academic": [
+      {
+        "id": 1,
+        "degree": "Bachelor of Technology (B.Tech)",
+        "stream": "Computer Science and Engineering",
+        "institution": "Indian Institute of Technology, Jammu",
+        "location": "Jammu, India",
+        "period": "2023 - 2027",
+        "grade": "CGPA: 8.47/10",
+        "description": "Specialized in software engineering, data structures, algorithms, discrete mathematics, programming languages, operating systems, database management systems, computer networks, artificial intelligence and computer vision. Simultaneously participated in various hackathons and coding competitions, enhancing practical skills in software development.",
+        "achievements": [
+          "Won INT MAESTRO at Anhad'25 at IIT JAMMU",
+          "Showed leadership skills while being Class Representative",
+          "Won third place in Line Follower Robot competition at Anhad'24"
+        ],
+        "logoIcon": "GraduationCap",
+        "logoColor": "#667eea"
+      },
+      {
+        "id": 2,
+        "degree": "CBSE 12th Boards",
+        "stream": "Mathematics, Physics, Chemistry",
+        "institution": "Indira International School, Kota",
+        "location": "Kota, Rajasthan",
+        "period": "2022 - 2023",
+        "grade": "Percentage: 92%",
+        "description": "Focused on advanced mathematics topics including calculus, algebra, and statistics.",
+        "logoIcon": "School",
+        "logoColor": "#764ba2"
+      }
+    ],
+    "certifications": []
+  },
+  "articles": [
+    {
+      "id": 4,
+      "title": "A view on Technological Growth Patterns",
+      "excerpt": "Observing patterns in nature is a common human tendency, and I’m sure you have felt this at various times. One day, I found myself pondering a question: How does something grow? Does it follow a specific pattern, perhaps a curve? After reflecting on this for a few minutes, I recalled a lesson from my chemistry class where we studied a graph representing growth. It illustrated how something reaches a saturation point beyond which it cannot exceed a certain limit. This made me wonder:...",
+      "content": "",
+      "publishDate": "2023-12-15",
+      "readTime": "8 min read",
+      "views": 1250,
+      "likes": 89,
+      "comments": 23,
+      "platform": "LinkedIn",
+      "linkedinPost": "https://www.linkedin.com/posts/ujjwal-iitjammu_growthpatterns-exponentialgrowth-futureoftechnology-activity-7346017319082463232-OQZi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEWRg_wBQ5mtAKx7G7Ur6OLWhobOMcb8ffg",
+      "tags": ["Technology", "Growth Patterns", "Future"],
+      "type": "tech"
+    },
+    {
+      "id": 3,
+      "title": "Deep Residual Learning for Image Recognition - Paper Explanation",
+      "excerpt": "I subconsciously accepted that very deep networks would always suffer from vanishing gradients and degraded accuracy...",
+      "content": "Breaking down the revolutionary ResNet paper that changed deep learning...",
+      "publishDate": "2023-09-15",
+      "readTime": "10 min read",
+      "views": 850,
+      "likes": 95,
+      "comments": 18,
+      "platform": "LinkedIn",
+      "linkedinPost": "https://www.linkedin.com/posts/ujjwal-iitjammu_i-subconsciously-accepted-that-very-deep-activity-7348923933737308160-bS_f?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEWRg_wBQ5mtAKx7G7Ur6OLWhobOMcb8ffg",
+      "pdfUrl": "https://arxiv.org/abs/1512.03385",
+      "paperAuthors": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun",
+      "paperConference": "CVPR 2016",
+      "tags": ["Deep Learning", "Computer Vision", "ResNet"],
+      "type": "research"
+    },
+    {
+      "id": 2,
+      "title": "VGGNet - Very Deep Convolutional Networks Explained",
+      "excerpt": "Apr 10, 2015 — A research paper titled \"Very Deep Convolutional Networks for Large-Scale Image...",
+      "content": "Understanding how VGGNet pioneered very deep CNN architectures...",
+      "publishDate": "2023-08-20",
+      "readTime": "8 min read",
+      "views": 720,
+      "likes": 76,
+      "comments": 12,
+      "platform": "LinkedIn",
+      "linkedinPost": "https://www.linkedin.com/posts/ujjwal-iitjammu_the-paper-that-revolutionized-image-recognition-activity-7346749628203077633-fly_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEWRg_wBQ5mtAKx7G7Ur6OLWhobOMcb8ffg",
+      "pdfUrl": "https://arxiv.org/abs/1409.1556",
+      "paperAuthors": "Karen Simonyan, Andrew Zisserman",
+      "paperConference": "ICLR 2015",
+      "tags": ["Deep Learning", "CNN", "VGG"],
+      "type": "research"
+    },
+    {
+      "id": 1,
+      "title": "The Illusion of Thinking - Can AI Truly Think?",
+      "excerpt": "CAN AI TRULY THINK – OR IS IT JUST SOLVING PATTERNS?...",
+      "content": "Exploring the philosophical implications of AI consciousness...",
+      "publishDate": "2023-07-10",
+      "readTime": "12 min read",
+      "views": 1150,
+      "likes": 132,
+      "comments": 28,
+      "platform": "LinkedIn",
+      "linkedinPost": "https://www.linkedin.com/posts/ujjwal-iitjammu_can-ai-truly-think-or-is-it-just-solving-activity-7340581467237847040-f3mV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEWRg_wBQ5mtAKx7G7Ur6OLWhobOMcb8ffg",
+      "pdfUrl": "https://arxiv.org/abs/2506.06941",
+      "paperAuthors": "Parshin Shojaee, Iman Mirzaei et al.",
+      "paperConference": "2025",
+      "tags": ["AI", "Philosophy", "Consciousness"],
+      "type": "research"
+    }
+  ]
+}

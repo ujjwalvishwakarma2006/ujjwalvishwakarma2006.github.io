@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     // Simulate loading time for smooth entrance
-    const timer = setTimeout(() => setIsLoading(false), 4000); // Increased to 2.5s for better animation experience
+    const timer = setTimeout(() => setIsLoading(false), 1500); // Reduced to 1.5s for better user experience
     return () => clearTimeout(timer);
   }, []);
 

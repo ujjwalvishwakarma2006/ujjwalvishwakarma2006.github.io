@@ -1,42 +1,32 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { getIcon } from '../../utils/iconMap';
+import portfolioData from '../../data/portfolioData.json';
 import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { personalInfo, socialProfiles } = portfolioData;
 
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/ujjwalVishwakarma2006',
-      icon: Github
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/in/ujjwal-iitjammu',
-      icon: Linkedin
-    },
-    {
-      name: 'Email',
-      url: 'mailto:ujjwalja23@gmail.com',
-      icon: Mail
-    }
-  ];
+  // Get GitHub, LinkedIn, and Email for footer
+  const socialLinks = socialProfiles.filter(p => 
+    ['GitHub', 'LinkedIn', 'Email'].includes(p.name)
+  );
 
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">
-            <h3 className="footer-name">Ujjwal Vishwakarma</h3>
+            <h3 className="footer-name">{personalInfo.name}</h3>
             <p className="footer-tagline">
-              Building the future through code and innovation
+              {personalInfo.tagline}
             </p>
           </div>
 
           <div className="footer-social">
             {socialLinks.map((link) => {
-              const IconComponent = link.icon;
+              const IconComponent = getIcon(link.icon);
               const isEmail = link.url.startsWith('mailto:');
               
               return (
@@ -58,7 +48,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-copyright">
             <p>
-              © {currentYear} Ujjwal Vishwakarma. All rights reserved.
+              © {currentYear} {personalInfo.name}. All rights reserved.
             </p>
           </div>
           

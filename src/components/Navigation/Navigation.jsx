@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
+import portfolioData from '../../data/portfolioData.json';
 import './Navigation.css';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const location = useLocation();
+
+  const { navItems, personalInfo } = portfolioData;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,24 +21,6 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/education', label: 'Education' },
-    { path: '/articles', label: 'Articles' },
-    { path: '/contact', label: 'Contact' }
-  ];
-
-  // Helper function to check if a nav item is active
-  const isActiveNavItem = (itemPath) => {
-    const currentPath = location.pathname;
-    // Handle both /path and /myPortfolio/path
-    return currentPath === itemPath || 
-           currentPath === `/myPortfolio${itemPath}` ||
-           (itemPath === '/' && (currentPath === '/myPortfolio' || currentPath === '/myPortfolio/'));
-  };
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -53,17 +37,17 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Ujjwal Vishwakarma
+            {personalInfo.name}
           </motion.div>
         </Link>
 
         {/* Desktop Menu */}
         <div className="nav-menu desktop-menu">
           {navItems.map((item) => (
-            <Link
+            <NavLink
               key={item.path}
               to={item.path}
-              className={`nav-link ${isActiveNavItem(item.path) ? 'active' : ''}`}
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
             >
               <motion.span
                 whileHover={{ y: -2 }}
@@ -71,7 +55,7 @@ const Navigation = () => {
               >
                 {item.label}
               </motion.span>
-            </Link>
+            </NavLink>
           ))}
         </div>
 
@@ -117,13 +101,13 @@ const Navigation = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link
+                  <NavLink
                     to={item.path}
-                    className={`mobile-nav-link ${isActiveNavItem(item.path) ? 'active' : ''}`}
+                    className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </motion.div>
               ))}
             </div>

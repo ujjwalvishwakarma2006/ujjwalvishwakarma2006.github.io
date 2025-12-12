@@ -1,44 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Star, FileText, Database, Brain } from 'lucide-react';
+import { Github, ExternalLink, Star } from 'lucide-react';
+import { getIcon } from '../../utils/iconMap';
+import portfolioData from '../../data/portfolioData.json';
 import './FeaturedProjects.css';
 
 const FeaturedProjects = () => {
-  const featuredProjects = [
-    {
-      id: 1,
-      title: 'Document Identity Aggregator',
-      description: 'Creating a system to aggregate and verify CV data using web crawling, OCR and NLP to detect inconsistencies and validate authenticity.',
-      icon: FileText,
-      technologies: ['Selenium', 'Tesseract OCR', 'NLP', 'APIs', 'Web Crawling'],
-      githubUrl: 'https://github.com/Prit44421/document_aggregation',
-      liveUrl: null,
-      featured: true,
-      status: 'In Development'
-    },
-    {
-      id: 2,
-      title: 'Library Management System - Advanced',
-      description: 'A comprehensive C++/SQLite-based system for efficient library resource and user management with CRUD operations and robust data validation.',
-      icon: Database,
-      technologies: ['C++', 'SQLite', 'CMake', 'Modern C++17', 'Shell Scripting'],
-      githubUrl: 'https://github.com/ujjwalvishwakarma2006/lms',
-      liveUrl: null,
-      featured: true,
-      status: 'Active'
-    },
-    {
-      id: 3,
-      title: 'Deep Learning with Python Projects',
-      description: 'Practicing Deep Learning from François Chollet\'s book along with research-inspired experiments using TensorFlow and Keras.',
-      icon: Brain,
-      technologies: ['Python', 'TensorFlow', 'Keras', 'Google Colab', 'Deep Learning'],
-      githubUrl: 'https://github.com/ujjwalvishwakarma2006/deep-learning-with-python',
-      liveUrl: null,
-      featured: true,
-      status: 'Ongoing'
-    }
-  ];
+  // Filter only featured projects from the data
+  const featuredProjects = portfolioData.projects.filter(p => p.featured);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,7 +50,9 @@ const FeaturedProjects = () => {
       animate="visible"
     >
       <div className="projects-grid">
-        {featuredProjects.map((project) => (
+        {featuredProjects.map((project) => {
+          const IconComponent = getIcon(project.icon);
+          return (
           <motion.div
             key={project.id}
             className="project-card"
@@ -90,9 +61,13 @@ const FeaturedProjects = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="project-image">
-              <div className="project-icon">
-                <project.icon size={48} />
-              </div>
+              {project.image ? (
+                <img src={project.image} alt={project.title} className="project-thumbnail" />
+              ) : (
+                <div className="project-icon">
+                  <IconComponent size={48} />
+                </div>
+              )}
               <div className="project-overlay">
                 <div className="project-links">
                   {project.githubUrl && (
@@ -150,7 +125,8 @@ const FeaturedProjects = () => {
               </div>
             </div>
           </motion.div>
-        ))}
+        );
+        })}
       </div>
     </motion.div>
   );

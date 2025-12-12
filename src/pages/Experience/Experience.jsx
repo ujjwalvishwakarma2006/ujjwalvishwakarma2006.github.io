@@ -1,85 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ExternalLink, Search, Mail, Briefcase } from 'lucide-react';
+import portfolioData from '../../data/portfolioData.json';
 import './Experience.css';
 
 const Experience = () => {
-  // Currently no professional experience - looking for opportunities!
-  // When you get experience, uncomment and update the experiences array below:
-  
-  /*
-  const experiences = [
-    {
-      id: 1,
-      title: 'Senior Software Developer',
-      company: 'Tech Innovation Corp',
-      location: 'Remote',
-      period: '2023 - Present',
-      type: 'Full-time',
-      description: 'Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.',
-      achievements: [
-        'Improved application performance by 40%',
-        'Led a team of 5 developers',
-        'Implemented CI/CD pipelines'
-      ],
-      technologies: ['React', 'Node.js', 'AWS', 'MongoDB', 'TypeScript'],
-      logo: '/api/placeholder/80/80'
-    },
-    {
-      id: 2,
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd',
-      location: 'Mumbai, India',
-      period: '2022 - 2023',
-      type: 'Full-time',
-      description: 'Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create user-friendly interfaces.',
-      achievements: [
-        'Delivered 15+ client projects',
-        'Reduced load times by 60%',
-        'Implemented responsive designs'
-      ],
-      technologies: ['React', 'Express.js', 'PostgreSQL', 'Docker'],
-      logo: '/api/placeholder/80/80'
-    },
-    {
-      id: 3,
-      title: 'Frontend Developer Intern',
-      company: 'StartupXYZ',
-      location: 'Bangalore, India',
-      period: '2021 - 2022',
-      type: 'Internship',
-      description: 'Worked on developing responsive web interfaces and learned modern development practices in a fast-paced startup environment.',
-      achievements: [
-        'Built 5 major features',
-        'Learned agile methodology',
-        'Contributed to open source'
-      ],
-      technologies: ['React', 'JavaScript', 'CSS3', 'Git'],
-      logo: '/api/placeholder/80/80'
-    }
-  ];
-  */
-
-  const lookingForWork = {
-    status: 'Available for Opportunities',
-    seeking: [
-      'Deep Learning Engineer Positions',
-      'Machine Learning Developer Roles',
-      'C++ Software Developer Opportunities',
-      'Linux Systems Developer',
-      'React.js Frontend Developer'
-    ],
-    preferences: [
-      'Remote or Hybrid Work',
-      'Tech Startups or Research Companies',
-      'Learning & Growth Opportunities',
-      'Collaborative Team Environment'
-    ],
-    skills: [
-      'C++', 'Python', 'Deep Learning', 'Linux', 'TensorFlow', 
-      'PyTorch', 'React.js', 'JavaScript', 'Git', 'Docker'
-    ]
-  };
+  const { lookingForWork } = portfolioData.experience;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -171,67 +97,6 @@ const Experience = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* Commented out experience timeline for future use */}
-        {/*
-        <div className="experience-timeline">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.id}
-              className="experience-item"
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="experience-content">
-                <div className="experience-header-info">
-                  <img src={exp.logo} alt={exp.company} className="company-logo" />
-                  <div className="experience-meta">
-                    <h3 className="experience-title">{exp.title}</h3>
-                    <h4 className="company-name">{exp.company}</h4>
-                    <div className="experience-details">
-                      <span className="experience-period">
-                        <Calendar size={16} />
-                        {exp.period}
-                      </span>
-                      <span className="experience-location">
-                        <MapPin size={16} />
-                        {exp.location}
-                      </span>
-                      <span className={`experience-type ${exp.type.toLowerCase()}`}>
-                        {exp.type}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="experience-description">{exp.description}</p>
-
-                <div className="experience-achievements">
-                  <h5>Key Achievements:</h5>
-                  <ul>
-                    {exp.achievements.map((achievement, idx) => (
-                      <li key={idx}>{achievement}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="experience-technologies">
-                  <h5>Technologies Used:</h5>
-                  <div className="tech-tags">
-                    {exp.technologies.map(tech => (
-                      <span key={tech} className="tech-tag">{tech}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="timeline-connector">
-                <div className="timeline-dot"></div>
-                {index < experiences.length - 1 && <div className="timeline-line"></div>}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        */}
       </div>
     </motion.div>
   );
