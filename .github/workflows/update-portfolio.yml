@@ -2,7 +2,7 @@ name: Update Portfolio Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight UTC
+    - cron: '0 0 * * *' # Runs every day at midnight UTC. NOTE: This may result in rate limiting if the APIs being called have restrictions. Consider changing to weekly (e.g., '0 0 * * 0') if daily updates are not necessary.
   workflow_dispatch: # Allows manual trigger
 
 permissions:
