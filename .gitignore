@@ -4,7 +4,7 @@ node_modules/
 .pnp.js
 
 # Production build (will be committed for GitHub Pages)
-# dist/ - commented out for GitHub Pages deployment
+dist/
 
 # Development
 .vite/
