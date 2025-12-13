@@ -21,7 +21,7 @@ todo.txt
 .env.production.local
 
 # GitHub Copilot instructions (personal preferences)
-.github
+# .github
 
 # Logs
 logs
