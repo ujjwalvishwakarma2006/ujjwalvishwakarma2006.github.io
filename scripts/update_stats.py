@@ -1,5 +1,7 @@
 import requests
 import json
+import os
+
 # Configuration
 GITHUB_USERNAME = "ujjwalVishwakarma2006"
 LEETCODE_USERNAME = "ujjwalVishwakarma2006"
@@ -8,12 +10,17 @@ DATA_FILE_PATH = "src/data/portfolioData.json"
 
 def get_github_stats(username):
     try:
-        response = requests.get(f"https://api.github.com/users/{username}")
+        headers = {}
+        token = os.environ.get('GITHUB_TOKEN')
+        if token:
+            headers['Authorization'] = f'token {token}'
+            
+        response = requests.get(f"https://api.github.com/users/{username}", headers=headers)
         if response.status_code == 200:
             data = response.json()
             return data['public_repos']
         else:
-            print(f"Error fetching GitHub stats: HTTP {response.status_code} - {response.text}")
+            print(f"Error fetching GitHub stats: HTTP {response.status_code}")
     except Exception as e:
         print(f"Error fetching GitHub stats: {e}")
     return None
@@ -55,7 +62,7 @@ def get_codeforces_stats(handle):
                     'rank': user_info.get('rank', 'unrated').capitalize()
                 }
         else:
-            print(f"Error fetching Codeforces stats: HTTP {response.status_code} - {response.text}")
+            print(f"Error fetching Codeforces stats: HTTP {response.status_code}")
     except Exception as e:
         print(f"Error fetching Codeforces stats: {type(e).__name__}: {e}")
     return None

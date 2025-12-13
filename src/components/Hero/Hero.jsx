@@ -11,7 +11,7 @@ const Hero = () => {
   
   // Get only the main social links for hero section (GitHub, LinkedIn, Email)
   const heroSocialLinks = socialProfiles.filter(profile => 
-    ['Github', 'Linkedin'].includes(profile.icon)
+    ['GitHub', 'LinkedIn', 'Email'].includes(profile.name)
   );
   const containerVariants = {
     hidden: { opacity: 0 },
