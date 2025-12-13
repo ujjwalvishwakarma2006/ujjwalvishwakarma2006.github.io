@@ -9,24 +9,27 @@ permissions:
   contents: write
 
 jobs:
-  update-stats:
+  update-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # ----------------------------------------------------------------
+      # 1. Python: Fetch Data & Update JSON
+      # ----------------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: pip install requests
 
       - name: Run update script
         run: python scripts/update_stats.py
 
-      - name: Commit and push changes
+      - name: Commit and push data changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
@@ -38,3 +41,23 @@ jobs:
           else
             echo "No changes to commit"
           fi
+
+      # ----------------------------------------------------------------
+      # 2. Node.js: Build & Deploy
+      # ----------------------------------------------------------------
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
