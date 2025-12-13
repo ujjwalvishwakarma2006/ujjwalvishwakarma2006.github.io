@@ -54,8 +54,10 @@ def get_codeforces_stats(handle):
                     'rating': user_info.get('rating', 0),
                     'rank': user_info.get('rank', 'unrated').capitalize()
                 }
+        else:
+            print(f"Error fetching Codeforces stats: HTTP {response.status_code} - {response.text}")
     except Exception as e:
-        print(f"Error fetching Codeforces stats: {e}")
+        print(f"Error fetching Codeforces stats: {type(e).__name__}: {e}")
     return None
 
 def update_portfolio_data():
