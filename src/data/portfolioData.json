@@ -170,7 +170,7 @@
     {
       "id": 97,
       "title": "Document Identity Aggregator",
-      "description": "Creating a system to aggregate and verify CV data using web crawling, OCR and NLP to detect inconsistencies and validate authenticity.",
+      "description": "Created a system to aggregate and verify CV data using web crawling, OCR and NLP to detect inconsistencies and validate authenticity.",
       "icon": "FileText",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTZeAkonP-9JkC3y9EyaTfYcT5VbYU3fKbZQ&s",
       "technologies": [
@@ -185,7 +185,7 @@
       "liveUrl": null,
       "status": "Completed",
       "date": "May 2025",
-      "details": "Developing a system to aggregate and cross-verify candidate CV data from multiple online sources to detect inconsistencies and validate authenticity.",
+      "details": "Developed a system to aggregate and cross-verify candidate CV data from multiple online sources to detect inconsistencies and validate authenticity.",
       "featured": true
     },
     {
