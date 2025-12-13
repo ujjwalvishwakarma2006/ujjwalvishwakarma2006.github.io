@@ -1,7 +1,5 @@
 import requests
 import json
-import os
-
 # Configuration
 GITHUB_USERNAME = "ujjwalVishwakarma2006"
 LEETCODE_USERNAME = "ujjwalVishwakarma2006"
@@ -14,6 +12,8 @@ def get_github_stats(username):
         if response.status_code == 200:
             data = response.json()
             return data['public_repos']
+        else:
+            print(f"Error fetching GitHub stats: HTTP {response.status_code} - {response.text}")
     except Exception as e:
         print(f"Error fetching GitHub stats: {e}")
     return None
@@ -54,8 +54,10 @@ def get_codeforces_stats(handle):
                     'rating': user_info.get('rating', 0),
                     'rank': user_info.get('rank', 'unrated').capitalize()
                 }
+        else:
+            print(f"Error fetching Codeforces stats: HTTP {response.status_code} - {response.text}")
     except Exception as e:
-        print(f"Error fetching Codeforces stats: {e}")
+        print(f"Error fetching Codeforces stats: {type(e).__name__}: {e}")
     return None
 
 def update_portfolio_data():
@@ -98,7 +100,7 @@ def update_portfolio_data():
 
     # Write back to file
     with open(DATA_FILE_PATH, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
+        json.dump(data, f, indent=2, ensure_ascii=False)
     
     print("Portfolio data updated successfully!")
 
