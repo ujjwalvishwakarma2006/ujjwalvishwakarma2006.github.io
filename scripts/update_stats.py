@@ -14,6 +14,8 @@ def get_github_stats(username):
         if response.status_code == 200:
             data = response.json()
             return data['public_repos']
+        else:
+            print(f"Error fetching GitHub stats: HTTP {response.status_code} - {response.text}")
     except Exception as e:
         print(f"Error fetching GitHub stats: {e}")
     return None
