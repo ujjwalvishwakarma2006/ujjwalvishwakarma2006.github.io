@@ -1,7 +1,5 @@
 import requests
 import json
-import os
-
 # Configuration
 GITHUB_USERNAME = "ujjwalVishwakarma2006"
 LEETCODE_USERNAME = "ujjwalVishwakarma2006"
