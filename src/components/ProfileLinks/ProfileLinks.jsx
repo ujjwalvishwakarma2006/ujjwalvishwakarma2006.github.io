@@ -1,47 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Code, Trophy, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { getIcon } from '../../utils/iconMap';
+import portfolioData from '../../data/portfolioData.json';
 import './ProfileLinks.css';
 
 const ProfileLinks = () => {
-  const profiles = [
-    {
-      name: 'GitHub',
-      username: 'ujjwalVishwakarma2006',
-      url: 'https://github.com/ujjwalVishwakarma2006',
-      icon: Github,
-      description: 'My code repositories and open source contributions',
-      stats: '50+ repositories',
-      color: '#333'
-    },
-    {
-      name: 'LinkedIn',
-      username: 'ujjwal-iitjammu',
-      url: 'https://linkedin.com/in/ujjwal-iitjammu',
-      icon: Linkedin,
-      description: 'Professional network and career updates',
-      stats: '500+ connections',
-      color: '#0077b5'
-    },
-    {
-      name: 'LeetCode',
-      username: 'ujjwalVishwakarma2006',
-      url: 'https://leetcode.com/ujjwalVishwakarma2006',
-      icon: Code,
-      description: 'Coding challenges and algorithm solutions',
-      stats: '200+ problems solved',
-      color: '#ffa116'
-    },
-    {
-      name: 'Codeforces',
-      username: '2023ucs0116',
-      url: 'https://codeforces.com/profile/2023ucs0116',
-      icon: Trophy,
-      description: 'Competitive programming contests and ratings',
-      stats: 'Expert level',
-      color: '#1f8dd6'
-    }
-  ];
+  // Filter profiles that have a username (exclude Email from profile cards)
+  const profiles = portfolioData.socialProfiles.filter(p => p.username);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,7 +38,7 @@ const ProfileLinks = () => {
     >
       <div className="profiles-grid">
         {profiles.map((profile) => {
-          const IconComponent = profile.icon;
+          const IconComponent = getIcon(profile.icon);
           return (
             <motion.a
               key={profile.name}

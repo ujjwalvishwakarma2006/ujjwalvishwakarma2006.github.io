@@ -1,61 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Award, BookOpen, GraduationCap, School, Building2 } from 'lucide-react';
+import { Calendar, MapPin, Award, BookOpen } from 'lucide-react';
+import { getIcon } from '../../utils/iconMap';
+import portfolioData from '../../data/portfolioData.json';
 import './Education.css';
 
 const Education = () => {
-  const education = [
-    {
-      id: 1,
-      degree: 'Bachelor of Technology (B.Tech)',
-      stream: 'Computer Science and Engineering',
-      institution: 'Indian Institute of Technology, Jammu',
-      location: 'Jammu, India',
-      period: '2023 - 2027',
-      grade: 'CGPA: 8.42/10',
-      description: 'Specialized in software engineering, data structures, algorithms, discrete mathematics, programming languages, operating systems, database management systems, computer networks and web technologies. Simultaneously participated in various hackathons and coding competitions, enhancing practical skills in software development.',
-      achievements: [
-        'Won INT MAESTRO at Anhad\'25 at IIT JAMMU',
-        'Showed leadership skills while being Class Representative',
-        'Won third place in Line Follower Robot competition at Anhad\'24',
-      ],
-      logoIcon: GraduationCap,
-      logoColor: '#667eea'
-    },
-    {
-      id: 2,
-      degree: 'CBSE 12th Boards',
-      stream: 'Mathematics',
-      institution: 'Indira International School, Kota',
-      location: 'Kota, Rajasthan',
-      period: '2022 - 2023',
-      grade: 'Percentage: 92%',
-      description: 'Focused on advanced mathematics topics including calculus, algebra, and statistics.',
-      logoIcon: School,
-      logoColor: '#764ba2'
-    }
-  ];
-
-  const certifications = [
-    // {
-    //   name: 'AWS Certified Solutions Architect',
-    //   issuer: 'Amazon Web Services',
-    //   date: '2023',
-    //   credentialId: 'AWS-SA-2023-001'
-    // },
-    // {
-    //   name: 'React Developer Certification',
-    //   issuer: 'Meta',
-    //   date: '2022',
-    //   credentialId: 'META-REACT-2022-456'
-    // },
-    // {
-    //   name: 'Full Stack Web Development',
-    //   issuer: 'freeCodeCamp',
-    //   date: '2021',
-    //   credentialId: 'FCC-FS-2021-789'
-    // }
-  ];
+  const { academic: education, certifications } = portfolioData.education;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -99,7 +50,9 @@ const Education = () => {
           </motion.h2>
 
           <div className="education-grid">
-            {education.map((edu) => (
+            {education.map((edu) => {
+              const LogoIcon = getIcon(edu.logoIcon);
+              return (
               <motion.div
                 key={edu.id}
                 className="education-card"
@@ -108,7 +61,7 @@ const Education = () => {
               >
                 <div className="education-header-info">
                   <div className="institution-logo" style={{ backgroundColor: edu.logoColor }}>
-                    <edu.logoIcon size={32} color="white" />
+                    <LogoIcon size={32} color="white" />
                   </div>
                   <div className="education-meta">
                     <h3 className="degree-title">{edu.degree}</h3>
@@ -142,7 +95,8 @@ const Education = () => {
                   </div>
                 )}
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
 

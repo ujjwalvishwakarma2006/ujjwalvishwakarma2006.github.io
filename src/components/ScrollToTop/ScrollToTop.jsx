@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import './ScrollToTop.css';
 
-// q: 
-
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 

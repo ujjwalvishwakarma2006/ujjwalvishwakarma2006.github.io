@@ -33,6 +33,17 @@
   justify-content: center;
 }
 
+.project-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail {
+  transform: scale(1.05);
+}
+
 .project-icon {
   display: flex;
   align-items: center;

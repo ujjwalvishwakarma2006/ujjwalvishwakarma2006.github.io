@@ -1,0 +1,65 @@
+name: Update Portfolio Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight UTC. NOTE: This may result in rate limiting if the APIs being called have restrictions. Consider changing to weekly (e.g., '0 0 * * 0') if daily updates are not necessary.
+  workflow_dispatch: # Allows manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ----------------------------------------------------------------
+      # 1. Python: Fetch Data & Update JSON
+      # ----------------------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install Python dependencies
+        run: pip install requests
+
+      - name: Run update script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/update_stats.py
+
+      - name: Commit and push data changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Check if there are changes
+          if [[ -n $(git status -s) ]]; then
+            git add src/data/portfolioData.json
+            git commit -m "chore: auto-update portfolio stats"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+
+      # ----------------------------------------------------------------
+      # 2. Node.js: Build & Deploy
+      # ----------------------------------------------------------------
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages

@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import portfolioData from '../../data/portfolioData.json';
 import './Contact.css';
 
-// q: What is arrow function syntax in JavaScript?
-// And how it is better/worse than normal function syntax?
-// a: Arrow functions are a concise way to write function expressions in JavaScript.
-// They are often preferred for their brevity and the fact that they do not have their own
-// `this` context, which can be beneficial in certain situations, such as when passing callbacks.
-// However, they cannot be used as constructors and do not have their own `arguments` object,
-// which can be a limitation in some cases.
-
 const Contact = () => {
+  const { personalInfo, socialProfiles } = portfolioData;
+
+  // Get GitHub and LinkedIn for social buttons
+  const github = socialProfiles.find(p => p.name === 'GitHub');
+  const linkedin = socialProfiles.find(p => p.name === 'LinkedIn');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,7 +75,7 @@ const Contact = () => {
               <Mail size={24} />
               <div>
                 <h3>Email</h3>
-                <p>ujjwalja23@gmail.com</p>
+                <p>{personalInfo.email}</p>
               </div>
             </div>
 
@@ -84,7 +83,7 @@ const Contact = () => {
               <Phone size={24} />
               <div>
                 <h3>Phone</h3>
-                <p>+91 XXXXX XXXXX</p>
+                <p>{personalInfo.phone}</p>
               </div>
             </div>
 
@@ -92,21 +91,25 @@ const Contact = () => {
               <MapPin size={24} />
               <div>
                 <h3>Location</h3>
-                <p>Rajasthan, India</p>
+                <p>{personalInfo.location}</p>
               </div>
             </div>
 
             <div className="social-links">
               <h3>Follow Me</h3>
               <div className="social-buttons">
-                <a href="https://github.com/ujjwalVishwakarma2006" target="_blank" rel="noopener noreferrer">
-                  <Github size={20} />
-                  GitHub
-                </a>
-                <a href="https://linkedin.com/in/ujjwal-iitjammu" target="_blank" rel="noopener noreferrer">
-                  <Linkedin size={20} />
-                  LinkedIn
-                </a>
+                {github && (
+                  <a href={github.url} target="_blank" rel="noopener noreferrer">
+                    <Github size={20} />
+                    GitHub
+                  </a>
+                )}
+                {linkedin && (
+                  <a href={linkedin.url} target="_blank" rel="noopener noreferrer">
+                    <Linkedin size={20} />
+                    LinkedIn
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

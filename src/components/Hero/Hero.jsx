@@ -1,10 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
+import portfolioData from '../../data/portfolioData.json';
+import { getIcon } from '../../utils/iconMap';
 
 const Hero = () => {
+  const { personalInfo, hero, socialProfiles } = portfolioData;
+  
+  // Get only the main social links for hero section (GitHub, LinkedIn, Email)
+  const heroSocialLinks = socialProfiles.filter(profile => 
+    ['GitHub', 'LinkedIn', 'Email'].includes(profile.name)
+  );
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -45,65 +53,63 @@ const Hero = () => {
         >
           <div className="hero-text">
             <motion.div className="hero-greeting" variants={itemVariants}>
-              <span className="greeting-text">Hello, I'm</span>
+              <span className="greeting-text">{hero.greeting}</span>
             </motion.div>
             
             <motion.h1 className="hero-name" variants={itemVariants}>
-              <span className="name-highlight">Ujjwal</span>
+              <span className="name-highlight">{personalInfo.firstName}</span>
               <br />
-              <span className="name-primary">Vishwakarma</span>
+              <span className="name-primary">{personalInfo.lastName}</span>
             </motion.h1>
             
             <motion.div className="hero-role" variants={itemVariants}>
               <div className="role-container">
-                <span className="role-text">CS Student</span>
-                <span className="role-separator">•</span>
-                <span className="role-text">Aspiring Developer</span>
-                <span className="role-separator">•</span>
-                <span className="role-text">Tech Enthusiast</span>
+                {hero.roles.map((role, index) => (
+                  <React.Fragment key={role}>
+                    <span className="role-text">{role}</span>
+                    {index < hero.roles.length - 1 && (
+                      <span className="role-separator">•</span>
+                    )}
+                  </React.Fragment>
+                ))}
               </div>
             </motion.div>
             
             <motion.p className="hero-description" variants={itemVariants}>
-              Computer Science student passionate about Deep Learning, C++, Linux, and React development. 
-              Currently building innovative projects and seeking opportunities to contribute to cutting-edge 
-              technologies while expanding my skills in software development and machine learning.
+              {hero.description}
             </motion.p>
             
             <motion.div className="hero-actions" variants={itemVariants}>
-              <Link to="/projects" className="btn btn-primary">
-                View My Work <ArrowRight size={18} />
+              <Link to={hero.primaryCTA.link} className="btn btn-primary">
+                {hero.primaryCTA.text} <ArrowRight size={18} />
               </Link>
-              <Link to="/contact" className="btn btn-secondary">
-                Let's Connect
+              <Link to={hero.secondaryCTA.link} className="btn btn-secondary">
+                {hero.secondaryCTA.text}
               </Link>
             </motion.div>
             
             <motion.div className="hero-social" variants={itemVariants}>
+              {heroSocialLinks.map(profile => {
+                const IconComponent = getIcon(profile.icon);
+                return (
+                  <a 
+                    key={profile.name}
+                    href={profile.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="social-link"
+                    aria-label={`${profile.name} Profile`}
+                  >
+                    <IconComponent size={24} />
+                  </a>
+                );
+              })}
               <a 
-                href="https://github.com/ujjwalVishwakarma2006" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label="GitHub Profile"
-              >
-                <Github size={24} />
-              </a>
-              <a 
-                href="https://linkedin.com/in/ujjwal-iitjammu" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a 
-                href="mailto:contact@ujjwalvishwakarma.com"
+                href={`mailto:${personalInfo.contactEmail}`}
                 className="social-link"
                 aria-label="Send Email"
               >
-                <Mail size={24} />
+                {(() => { const MailIcon = getIcon('Mail'); return <MailIcon size={24} />; })()}
               </a>
             </motion.div>
           </div>
@@ -113,7 +119,7 @@ const Hero = () => {
               <div className="profile-image">
                 {/* Placeholder for profile image */}
                 <div className="profile-placeholder">
-                  <span className="profile-initials">UV</span>
+                  <span className="profile-initials">{personalInfo.initials}</span>
                 </div>
               </div>
               <div className="floating-elements">
