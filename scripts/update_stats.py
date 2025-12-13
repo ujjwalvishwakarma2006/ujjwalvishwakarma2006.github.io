@@ -102,7 +102,7 @@ def update_portfolio_data():
 
     # Write back to file
     with open(DATA_FILE_PATH, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
+        json.dump(data, f, indent=2, ensure_ascii=False)
     
     print("Portfolio data updated successfully!")
 
