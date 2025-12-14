@@ -19,7 +19,7 @@
       "Aspiring Developer",
       "Tech Enthusiast"
     ],
-    "description": "Pre-final year student at IIT Jammu with 2.5+ years of programming experience. Worked with C++, Python, and Rust. I solve DSA problems, build personal and curriculum projects, and have a strong interest in Deep Learning. I've studied research papers and completed Fran\u00e7ois Chollet's Deep Learning book.",
+    "description": "Pre-final year student at IIT Jammu with 2.5+ years of programming experience. Worked with C++, Python, and Rust. I solve DSA problems, build personal and curriculum projects, and have a strong interest in Deep Learning. I've studied research papers and completed François Chollet's Deep Learning book.",
     "primaryCTA": {
       "text": "View My Work",
       "link": "/projects"
@@ -191,7 +191,7 @@
     {
       "id": 98,
       "title": "Deep Learning with Python Projects",
-      "description": "Practicing Deep Learning from Fran\u00e7ois Chollet's book along with research-inspired experiments using TensorFlow and Keras.",
+      "description": "Practicing Deep Learning from François Chollet's book along with research-inspired experiments using TensorFlow and Keras.",
       "icon": "Brain",
       "image": "https://www.tensorflow.org/static/site-assets/images/marketing/edu/edu_books.jpg",
       "technologies": [
@@ -206,7 +206,7 @@
       "liveUrl": null,
       "status": "Ongoing",
       "date": "Present",
-      "details": "Following the \"Deep Learning with Python\" by Fran\u00e7ois Chollet book with additional research-inspired experiments and implementations.",
+      "details": "Following the \"Deep Learning with Python\" by François Chollet book with additional research-inspired experiments and implementations.",
       "featured": false
     },
     {
@@ -341,7 +341,7 @@
     {
       "id": 4,
       "title": "A view on Technological Growth Patterns",
-      "excerpt": "Observing patterns in nature is a common human tendency, and I\u2019m sure you have felt this at various times. One day, I found myself pondering a question: How does something grow? Does it follow a specific pattern, perhaps a curve? After reflecting on this for a few minutes, I recalled a lesson from my chemistry class where we studied a graph representing growth. It illustrated how something reaches a saturation point beyond which it cannot exceed a certain limit. This made me wonder:...",
+      "excerpt": "Observing patterns in nature is a common human tendency, and I’m sure you have felt this at various times. One day, I found myself pondering a question: How does something grow? Does it follow a specific pattern, perhaps a curve? After reflecting on this for a few minutes, I recalled a lesson from my chemistry class where we studied a graph representing growth. It illustrated how something reaches a saturation point beyond which it cannot exceed a certain limit. This made me wonder:...",
       "content": "",
       "publishDate": "2023-12-15",
       "readTime": "8 min read",
@@ -382,7 +382,7 @@
     {
       "id": 2,
       "title": "VGGNet - Very Deep Convolutional Networks Explained",
-      "excerpt": "Apr 10, 2015 \u2014 A research paper titled \"Very Deep Convolutional Networks for Large-Scale Image...",
+      "excerpt": "Apr 10, 2015 — A research paper titled \"Very Deep Convolutional Networks for Large-Scale Image...",
       "content": "Understanding how VGGNet pioneered very deep CNN architectures...",
       "publishDate": "2023-08-20",
       "readTime": "8 min read",
@@ -404,7 +404,7 @@
     {
       "id": 1,
       "title": "The Illusion of Thinking - Can AI Truly Think?",
-      "excerpt": "CAN AI TRULY THINK \u2013 OR IS IT JUST SOLVING PATTERNS?...",
+      "excerpt": "CAN AI TRULY THINK – OR IS IT JUST SOLVING PATTERNS?...",
       "content": "Exploring the philosophical implications of AI consciousness...",
       "publishDate": "2023-07-10",
       "readTime": "12 min read",
