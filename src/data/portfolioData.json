@@ -58,8 +58,8 @@
   "socialProfiles": [
     {
       "name": "GitHub",
-      "username": "ujjwalVishwakarma2006",
-      "url": "https://github.com/ujjwalVishwakarma2006",
+      "username": "lokirithm",
+      "url": "https://github.com/lokirithm",
       "icon": "Github",
       "description": "My code repositories and open source contributions",
       "stats": "29+ repositories",
@@ -76,8 +76,8 @@
     },
     {
       "name": "LeetCode",
-      "username": "ujjwalVishwakarma2006",
-      "url": "https://leetcode.com/ujjwalVishwakarma2006",
+      "username": "lokirithm",
+      "url": "https://leetcode.com/lokirithm",
       "icon": "Code",
       "description": "Coding challenges and algorithm solutions",
       "stats": "626+ problems solved",
@@ -138,7 +138,7 @@
         "Git"
       ],
       "category": "Systems Programming",
-      "githubUrl": "https://github.com/ujjwalvishwakarma2006/multi-threaded-ray-tracer",
+      "githubUrl": "https://github.com/lokirithm/multi-threaded-ray-tracer",
       "liveUrl": null,
       "status": "Completed",
       "date": "Dec 2025",
@@ -202,7 +202,7 @@
         "Deep Learning"
       ],
       "category": "AI/ML",
-      "githubUrl": "https://github.com/ujjwalvishwakarma2006/deep-learning-with-python",
+      "githubUrl": "https://github.com/lokirithm/deep-learning-with-python",
       "liveUrl": null,
       "status": "Ongoing",
       "date": "Present",
@@ -222,7 +222,7 @@
         "Python"
       ],
       "category": "Desktop Application",
-      "githubUrl": "https://github.com/ujjwalvishwakarma2006/spotify-to-ytmusic",
+      "githubUrl": "https://github.com/lokirithm/spotify-to-ytmusic",
       "liveUrl": null,
       "status": "Completed",
       "date": "Dec 2024",
@@ -243,8 +243,8 @@
         "JavaScript"
       ],
       "category": "Web Development",
-      "githubUrl": "https://github.com/ujjwalvishwakarma2006/ujjwalvishwakarma2006.github.io",
-      "liveUrl": "https://ujjwalvishwakarma2006.github.io",
+      "githubUrl": "https://github.com/lokirithm/lokirithm.github.io",
+      "liveUrl": "https://lokirithm.github.io",
       "status": "Live",
       "date": "Jan 2025",
       "details": "Personal portfolio website featuring responsive design, smooth animations, dark/light theme toggle, and optimized performance.",
@@ -265,7 +265,7 @@
         "Websockets"
       ],
       "category": "Database Management",
-      "githubUrl": "https://github.com/ujjwalvishwakarma2006/delhi-metro-ticket-booking-system",
+      "githubUrl": "https://github.com/lokirithm/delhi-metro-ticket-booking-system",
       "liveUrl": null,
       "status": "Completed",
       "date": "Nov 2025",

@@ -61,7 +61,7 @@ myPortfolio/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/ujjwalvishwakarma2006/ujjwalvishwakarma2006.github.io
+   git clone https://github.com/lokirithm/lokirithm.github.io
    cd portfolio
    ```
 

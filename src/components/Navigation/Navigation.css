@@ -4,23 +4,23 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(18, 18, 18, 0.8); /* Matte Black */
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
 }
 
 [data-theme="light"] .navigation {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(248, 250, 252, 0.8); /* Slate Light */
 }
 
 .navigation.scrolled {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(18, 18, 18, 0.95);
   box-shadow: var(--shadow);
 }
 
 [data-theme="light"] .navigation.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(248, 250, 252, 0.95);
 }
 
 .nav-container {
