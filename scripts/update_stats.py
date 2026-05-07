@@ -3,8 +3,8 @@ import json
 import os
 
 # Configuration
-GITHUB_USERNAME = "ujjwalVishwakarma2006"
-LEETCODE_USERNAME = "ujjwalVishwakarma2006"
+GITHUB_USERNAME = "lokirithm"
+LEETCODE_USERNAME = "lokirithm"
 CODEFORCES_HANDLE = "2023ucs0116"
 DATA_FILE_PATH = "src/data/portfolioData.json"
 
