@@ -51,6 +51,10 @@
       "label": "Articles"
     },
     {
+      "path": "/open-source",
+      "label": "Open Source"
+    },
+    {
       "path": "/contact",
       "label": "Contact"
     }
@@ -422,6 +426,26 @@
         "Consciousness"
       ],
       "type": "research"
+    }
+  ],
+  "openSource": [
+    {
+      "number": 123,
+      "repo": "owner/example-repo",
+      "status": "merged",
+      "url": "https://github.com/owner/example-repo/pull/123"
+    },
+    {
+      "number": 456,
+      "repo": "another-owner/awesome-project",
+      "status": "open",
+      "url": "https://github.com/another-owner/awesome-project/pull/456"
+    },
+    {
+      "number": 789,
+      "repo": "owner/example-repo",
+      "status": "closed",
+      "url": "https://github.com/owner/example-repo/pull/789"
     }
   ]
 }

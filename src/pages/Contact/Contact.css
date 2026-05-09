@@ -193,3 +193,23 @@
     width: 100%;
   }
 }
+
+.no-backend-notice {
+  background-color: rgba(234, 179, 8, 0.1);
+  border-left: 4px solid var(--accent, #eab308);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.no-backend-notice p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.no-backend-notice a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 500;
+}

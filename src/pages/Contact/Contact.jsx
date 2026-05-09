@@ -115,6 +115,10 @@ const Contact = () => {
           </motion.div>
 
           <motion.form className="contact-form" onSubmit={handleSubmit} variants={itemVariants}>
+            <div className="no-backend-notice">
+              <p>Note: This form does not have a backend connected and won't send a message. You can <a href={`mailto:${personalInfo.email}`}>email me directly</a> instead.</p>
+            </div>
+            
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input

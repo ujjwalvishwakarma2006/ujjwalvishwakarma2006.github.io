@@ -1,0 +1,148 @@
+.open-source-page {
+  min-height: 100vh;
+  padding: var(--section-padding);
+}
+
+.page-header.text-center {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Filter Controls */
+.filter-section {
+  margin-bottom: 3rem;
+}
+
+.category-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius, 4px);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Table */
+.table-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.pr-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pr-table th {
+  padding: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border);
+}
+
+.pr-row {
+  transition: background-color 0.2s ease;
+}
+
+.pr-row:hover {
+  background-color: var(--bg-secondary);
+}
+
+.pr-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text-primary);
+}
+
+.pr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.pr-link:hover {
+  text-decoration: underline;
+}
+
+.pr-repo-cell {
+  font-weight: var(--font-weight-medium);
+}
+
+/* Status Badges */
+.pr-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pr-status-badge.pr-status-open {
+  background: rgba(45, 164, 78, 0.1);
+  color: #2da44e;
+}
+
+.pr-status-badge.pr-status-merged {
+  background: rgba(130, 80, 223, 0.1);
+  color: #8250df;
+}
+
+.pr-status-badge.pr-status-closed {
+  background: rgba(207, 34, 46, 0.1);
+  color: #cf222e;
+}
+
+.no-prs {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+@media (max-width: 600px) {
+  .category-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -8,10 +8,22 @@ import { getIcon } from '../../utils/iconMap';
 
 const Hero = () => {
   const { personalInfo, hero, socialProfiles } = portfolioData;
+
+  const particles = React.useMemo(() => {
+    return Array.from({ length: 80 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      // Negative animation delay starts particles at different random points in their timeline
+      animationDelay: `-${Math.random() * 30}s`,
+      // Randomizes speed for depth perception
+      animationDuration: `${10 + Math.random() * 20}s`,
+      type: i % 3
+    }));
+  }, []);
   
-  // Get only the main social links for hero section (GitHub, LinkedIn, Email)
+  // Get only the main social links for hero section (GitHub, LinkedIn)
   const heroSocialLinks = socialProfiles.filter(profile => 
-    ['GitHub', 'LinkedIn', 'Email'].includes(profile.name)
+    ['GitHub', 'LinkedIn'].includes(profile.name)
   );
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -104,13 +116,6 @@ const Hero = () => {
                   </a>
                 );
               })}
-              <a 
-                href={`mailto:${personalInfo.contactEmail}`}
-                className="social-link"
-                aria-label="Send Email"
-              >
-                {(() => { const MailIcon = getIcon('Mail'); return <MailIcon size={24} />; })()}
-              </a>
             </motion.div>
           </div>
           
@@ -136,8 +141,16 @@ const Hero = () => {
       <div className="hero-bg">
         <div className="bg-gradient"></div>
         <div className="bg-particles">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <div key={i} className={`particle particle-${i % 3}`}></div>
+          {particles.map((p) => (
+            <div 
+              key={p.id} 
+              className={`particle particle-${p.type}`}
+              style={{
+                left: p.left,
+                animationDelay: p.animationDelay,
+                animationDuration: p.animationDuration
+              }}
+            ></div>
           ))}
         </div>
       </div>
