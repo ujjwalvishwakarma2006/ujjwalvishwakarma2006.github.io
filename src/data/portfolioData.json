@@ -430,22 +430,36 @@
   ],
   "openSource": [
     {
-      "number": 123,
-      "repo": "owner/example-repo",
       "status": "merged",
-      "url": "https://github.com/owner/example-repo/pull/123"
+      "url": "https://github.com/rust-lang/rust/pull/154506"
     },
     {
-      "number": 456,
-      "repo": "another-owner/awesome-project",
-      "status": "open",
-      "url": "https://github.com/another-owner/awesome-project/pull/456"
+      "status": "merged",
+      "url": "https://github.com/rust-lang/rust/pull/154386"
     },
     {
-      "number": 789,
-      "repo": "owner/example-repo",
-      "status": "closed",
-      "url": "https://github.com/owner/example-repo/pull/789"
+      "status": "merged",
+      "url": "https://github.com/rust-lang/rust/pull/154425"
+    },
+    {
+      "status": "merged",
+      "url": "https://github.com/rust-lang/rust/pull/154167"
+    },
+    {
+      "status": "merged",
+      "url": "https://github.com/rust-lang/rust/pull/155351"
+    },
+    {
+      "status": "merged",
+      "url": "https://github.com/rust-lang/rust/pull/155523"
+    },
+    {
+      "status": "merged",
+      "url": "https://github.com/rust-lang/rust/pull/155062"
+    },
+    {
+      "status": "merged",
+      "url": "https://github.com/rust-lang/rust/pull/156274"
     }
   ]
 }
