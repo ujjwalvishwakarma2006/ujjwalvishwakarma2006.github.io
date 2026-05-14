@@ -129,6 +129,28 @@
   ],
   "projects": [
     {
+      "id": 94,
+      "title": "Saffron: E2E Encrypted C/S Chat",
+      "description": "Secure end-to-end encrypted client-server chat application.",
+      "icon": "FileText",
+      "image": "https://www.cyberarrow.io/storage/2022/06/End-to-End-Encryption-vector-illustration.png",
+      "technologies": [
+        "C",
+        "OpenSSL",
+        "make",
+        "IPC",
+        "ncurses",
+        "Multi-threading"
+      ],
+      "category": "Networking",
+      "githubUrl": "https://github.com/lokirithm/saffron-c",
+      "liveUrl": null,
+      "status": "Completed",
+      "date": "Mar 2026",
+      "details": "End-to-end encrypted client-server chat application in C using OpenSSL. TLS-like authentication and encryption, multi-threading to support dual channel support (one for messages, and one for file transfers), and ncurses for terminal UI.",
+      "featured": true
+    },
+    {
       "id": 95,
       "title": "Multi-threaded Ray Tracer",
       "description": "A multi-threaded ray tracer based on the first book in Ray Tracing in One Weekend series.",
@@ -190,7 +212,7 @@
       "status": "Completed",
       "date": "May 2025",
       "details": "Developed a system to aggregate and cross-verify candidate CV data from multiple online sources to detect inconsistencies and validate authenticity.",
-      "featured": true
+      "featured": false
     },
     {
       "id": 98,
@@ -430,8 +452,12 @@
   ],
   "openSource": [
     {
-      "status": "merged",
-      "url": "https://github.com/rust-lang/rust/pull/154506"
+      "status": "open",
+      "url": "https://github.com/rust-lang/rust/pull/156497"
+    },
+    {
+      "status": "open",
+      "url": "https://github.com/rust-lang/rust/pull/156317"
     },
     {
       "status": "merged",
